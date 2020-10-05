@@ -53,7 +53,7 @@ class MainView: UIViewController {
     }
     
     @IBAction func didTapDeviceMotionButton(_ sender: UIButton) {
-        let vc = DeviceMotionDataVC()
+        let vc = StepCounterVC()
         navigationController?.pushViewController(vc, animated: true)
     }
     

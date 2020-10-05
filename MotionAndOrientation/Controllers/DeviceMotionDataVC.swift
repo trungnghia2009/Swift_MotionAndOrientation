@@ -8,7 +8,7 @@
 import UIKit
 import CoreMotion
 
-class DeviceMotionDataVC: UIViewController {
+class StepCounterVC: UIViewController {
 
     // MARK: Properties
     private let motionManager = CMMotionManager()
@@ -34,6 +34,7 @@ class DeviceMotionDataVC: UIViewController {
         view.backgroundColor = .white
         navigationItem.title = "Device Motion Test"
         setupUI()
+        doSomething()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -55,7 +56,7 @@ class DeviceMotionDataVC: UIViewController {
         view.addSubview(label)
         label.centerX(inView: view)
         label.anchor(top: imageView.bottomAnchor, paddingTop: 20)
-        updateLabel(label)
+//        updateLabel(label)
         
     }
     
@@ -74,5 +75,22 @@ class DeviceMotionDataVC: UIViewController {
             }
         }
     }
+    
+    func doSomething() {
+        let isActivityAvailable = CMMotionActivityManager.isActivityAvailable()
+        if isActivityAvailable {
+            CMMotionActivityManager().startActivityUpdates(to: OperationQueue.main) { (motionActivity) in
+                if (motionActivity!.confidence.rawValue > 0) {
+                    if (motionActivity?.walking)! {
+                        print("User is walking")
+                    }
+                    if (motionActivity?.running)! {
+                        print("User is runing")
+                    }
+                }
+            }
+        }
+    }
+    
 
 }

@@ -39,7 +39,7 @@ class ShakeVC: UIViewController {
     
     // MARK: Helpers
     
-    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+    override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             print("Shake....")
             UIDevice.vibrate()

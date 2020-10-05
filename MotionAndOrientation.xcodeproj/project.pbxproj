@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C78CA59252B53C400BDBF22 /* KissTheRain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2C78CA58252B53C400BDBF22 /* KissTheRain.mp3 */; };
 		BAA459C6252AD264005915BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA459C5252AD264005915BE /* AppDelegate.swift */; };
 		BAA459C8252AD264005915BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA459C7252AD264005915BE /* SceneDelegate.swift */; };
 		BAA459CA252AD264005915BE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA459C9252AD264005915BE /* MainView.swift */; };
@@ -18,12 +19,13 @@
 		BAA459EF252AF497005915BE /* AccelerationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA459EE252AF497005915BE /* AccelerationVC.swift */; };
 		BAA459F3252B0CC6005915BE /* RotationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA459F2252B0CC6005915BE /* RotationVC.swift */; };
 		BAA459F8252B11F7005915BE /* MagneticFieldsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA459F7252B11F7005915BE /* MagneticFieldsVC.swift */; };
-		BAA459FC252B12F0005915BE /* DeviceMotionDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA459FB252B12F0005915BE /* DeviceMotionDataVC.swift */; };
+		BAA459FC252B12F0005915BE /* StepCounterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA459FB252B12F0005915BE /* StepCounterVC.swift */; };
 		BAA45A00252B1CEA005915BE /* AudioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA459FF252B1CEA005915BE /* AudioVC.swift */; };
 		BAA45A05252B1E97005915BE /* Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BAA45A04252B1E97005915BE /* Sound.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C78CA58252B53C400BDBF22 /* KissTheRain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = KissTheRain.mp3; sourceTree = "<group>"; };
 		BAA459C2252AD264005915BE /* MotionAndOrientation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotionAndOrientation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAA459C5252AD264005915BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAA459C7252AD264005915BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +39,7 @@
 		BAA459EE252AF497005915BE /* AccelerationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerationVC.swift; sourceTree = "<group>"; };
 		BAA459F2252B0CC6005915BE /* RotationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationVC.swift; sourceTree = "<group>"; };
 		BAA459F7252B11F7005915BE /* MagneticFieldsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagneticFieldsVC.swift; sourceTree = "<group>"; };
-		BAA459FB252B12F0005915BE /* DeviceMotionDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceMotionDataVC.swift; sourceTree = "<group>"; };
+		BAA459FB252B12F0005915BE /* StepCounterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCounterVC.swift; sourceTree = "<group>"; };
 		BAA459FF252B1CEA005915BE /* AudioVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioVC.swift; sourceTree = "<group>"; };
 		BAA45A04252B1E97005915BE /* Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sound.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,7 +103,7 @@
 				BAA459EE252AF497005915BE /* AccelerationVC.swift */,
 				BAA459F2252B0CC6005915BE /* RotationVC.swift */,
 				BAA459F7252B11F7005915BE /* MagneticFieldsVC.swift */,
-				BAA459FB252B12F0005915BE /* DeviceMotionDataVC.swift */,
+				BAA459FB252B12F0005915BE /* StepCounterVC.swift */,
 				BAA459FF252B1CEA005915BE /* AudioVC.swift */,
 			);
 			path = Controllers;
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				BAA45A04252B1E97005915BE /* Sound.mp3 */,
+				2C78CA58252B53C400BDBF22 /* KissTheRain.mp3 */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				BAA45A05252B1E97005915BE /* Sound.mp3 in Resources */,
 				BAA459D2252AD267005915BE /* LaunchScreen.storyboard in Resources */,
 				BAA459CF252AD267005915BE /* Assets.xcassets in Resources */,
+				2C78CA59252B53C400BDBF22 /* KissTheRain.mp3 in Resources */,
 				BAA459CD252AD264005915BE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,7 +200,7 @@
 			files = (
 				BAA459EC252AEB83005915BE /* ShakeVC.swift in Sources */,
 				BAA459CA252AD264005915BE /* MainView.swift in Sources */,
-				BAA459FC252B12F0005915BE /* DeviceMotionDataVC.swift in Sources */,
+				BAA459FC252B12F0005915BE /* StepCounterVC.swift in Sources */,
 				BAA459C6252AD264005915BE /* AppDelegate.swift in Sources */,
 				BAA459EF252AF497005915BE /* AccelerationVC.swift in Sources */,
 				BAA459C8252AD264005915BE /* SceneDelegate.swift in Sources */,
@@ -350,15 +354,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K7QW447H59;
+				DEVELOPMENT_TEAM = A6799ZJFEN;
 				INFOPLIST_FILE = MotionAndOrientation/Commons/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = nghiaTran2020.com.MotionAndOrientation;
+				PRODUCT_BUNDLE_IDENTIFIER = nghiaTran2020.com.MotionAndOrientationHome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -369,15 +375,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K7QW447H59;
+				DEVELOPMENT_TEAM = A6799ZJFEN;
 				INFOPLIST_FILE = MotionAndOrientation/Commons/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = nghiaTran2020.com.MotionAndOrientation;
+				PRODUCT_BUNDLE_IDENTIFIER = nghiaTran2020.com.MotionAndOrientationHome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
