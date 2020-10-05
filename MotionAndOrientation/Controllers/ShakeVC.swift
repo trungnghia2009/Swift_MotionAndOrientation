@@ -17,13 +17,14 @@ class ShakeVC: UIViewController {
         label.textColor = .white
         label.layer.cornerRadius = 20
         label.layer.masksToBounds = true
+        label.layer.backgroundColor = UIColor.random().cgColor
         return label
     }()
     
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .random()
+        view.backgroundColor = .white
         navigationItem.title = "Shake Test"
         view.addSubview(label)
     }
