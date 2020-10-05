@@ -1,5 +1,5 @@
 //
-//  CoreMotionVC.swift
+//  MagneticFields.swift
 //  MotionAndOrientation
 //
 //  Created by NghiaTran on 10/5/20.
@@ -8,7 +8,7 @@
 import UIKit
 import CoreMotion
 
-class AccelerationVC: UIViewController {
+class MagneticFieldsVC: UIViewController {
 
     // MARK: Properties
     private let motionManager = CMMotionManager()
@@ -32,15 +32,15 @@ class AccelerationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        navigationItem.title = "Motion Test"
+        navigationItem.title = "Magnetic Fields Test"
         setupUI()
-        
     }
     
-    deinit {
-        motionManager
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("Stop MagnetometerUpdates...")
+        motionManager.stopMagnetometerUpdates()
     }
-
     
     // MARK: Helpers
     private func setupUI() {
@@ -49,7 +49,7 @@ class AccelerationVC: UIViewController {
         view.addSubview(imageView)
         imageView.centerX(inView: view)
         imageView.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 20)
-        imageView.image = UIImage(named: "Acceleration")
+        imageView.image = UIImage(named: "MagneticFields")
         
         // label layouts
         view.addSubview(label)
@@ -60,13 +60,13 @@ class AccelerationVC: UIViewController {
     }
     
     private func updateLabel(_ label: UILabel) {
-        if motionManager.isAccelerometerAvailable {
-            motionManager.accelerometerUpdateInterval = 0.5
-            motionManager.startAccelerometerUpdates(to: OperationQueue.main) { (motion, error) -> Void in
+        if motionManager.isMagnetometerAvailable {
+            motionManager.magnetometerUpdateInterval = 0.5
+            motionManager.startMagnetometerUpdates(to: OperationQueue.main) { (motion, error) -> Void in
                 if let trackMotion = motion {
-                    let userAcceleration = trackMotion.acceleration
-                    let displayText = "x: \(userAcceleration.x) \ny: \(userAcceleration.y) \nz: \(userAcceleration.z)"
-                    print("x: \(userAcceleration.x)")
+                    let userField = trackMotion.magneticField
+                    let displayText = "x: \(userField.x) \ny: \(userField.y) \nz: \(userField.z)"
+                    print(displayText)
                     DispatchQueue.main.async {
                         self.label.text = displayText
                     }
@@ -74,5 +74,7 @@ class AccelerationVC: UIViewController {
             }
         }
     }
+    
+    
 
 }

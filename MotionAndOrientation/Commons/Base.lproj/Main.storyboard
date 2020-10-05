@@ -25,7 +25,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="vtM-GH-7MT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Shake Gesture">
+                                <state key="normal" title="Shake Gesture Test">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -40,11 +40,71 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="ODP-nh-bBF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Core Motion">
+                                <state key="normal" title="Acceleration Test">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="didTapCoreMotionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VIe-x8-1Re"/>
+                                    <action selector="didTapAccelerationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VIe-x8-1Re"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2V-KI-vw6">
+                                <rect key="frame" x="107" y="350" width="200" height="40"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="GsD-HF-w66"/>
+                                    <constraint firstAttribute="height" constant="40" id="KFQ-DQ-XAN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Rotation Test">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapRotationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DeN-6M-XgD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mqd-rm-fLz">
+                                <rect key="frame" x="107" y="410" width="200" height="40"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="fzW-Zl-Uw1"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="yDI-30-85N"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Magnetic Fields Test">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapMagneticFieldsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6wE-yF-E92"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZmF-ED-fdA">
+                                <rect key="frame" x="107" y="470" width="200" height="40"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="d5e-GP-0Zz"/>
+                                    <constraint firstAttribute="height" constant="40" id="tnu-gp-I4D"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Device Motion Test">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapDeviceMotionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7GQ-fl-gHm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Aa-7j-cGU">
+                                <rect key="frame" x="107" y="530" width="200" height="40"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1s0-X3-4yb"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="WoU-mg-zjO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Audio Test">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapAudioButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LAU-rI-mhx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -53,13 +113,25 @@
                         <constraints>
                             <constraint firstItem="pQN-ej-186" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2N3-3R-fdn"/>
                             <constraint firstItem="fXB-ei-glE" firstAttribute="top" secondItem="pQN-ej-186" secondAttribute="bottom" constant="20" id="6Ew-B6-Tif"/>
+                            <constraint firstItem="ZmF-ED-fdA" firstAttribute="top" secondItem="mqd-rm-fLz" secondAttribute="bottom" constant="20" id="PLJ-HR-e1G"/>
+                            <constraint firstItem="mqd-rm-fLz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TOe-RW-2hE"/>
+                            <constraint firstItem="A2V-KI-vw6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VEw-Md-EXn"/>
+                            <constraint firstItem="2Aa-7j-cGU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Yk0-7M-yxg"/>
+                            <constraint firstItem="ZmF-ED-fdA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZCh-Ot-szh"/>
+                            <constraint firstItem="2Aa-7j-cGU" firstAttribute="top" secondItem="ZmF-ED-fdA" secondAttribute="bottom" constant="20" id="e0M-pN-zf2"/>
                             <constraint firstItem="fXB-ei-glE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="l9H-N7-shx"/>
+                            <constraint firstItem="A2V-KI-vw6" firstAttribute="top" secondItem="fXB-ei-glE" secondAttribute="bottom" constant="20" id="qD0-De-cHV"/>
                             <constraint firstItem="pQN-ej-186" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="90" id="wUr-qK-wlA"/>
+                            <constraint firstItem="mqd-rm-fLz" firstAttribute="top" secondItem="A2V-KI-vw6" secondAttribute="bottom" constant="20" id="wWz-kj-bAb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Motion Demo" largeTitleDisplayMode="always" id="09u-a9-TaB"/>
                     <connections>
-                        <outlet property="coreMotion" destination="fXB-ei-glE" id="jO1-gM-AjJ"/>
+                        <outlet property="accelerationButton" destination="fXB-ei-glE" id="jO1-gM-AjJ"/>
+                        <outlet property="audioButton" destination="2Aa-7j-cGU" id="YS9-MT-FGb"/>
+                        <outlet property="deviceMotionButton" destination="ZmF-ED-fdA" id="Gbk-0c-Dc7"/>
+                        <outlet property="magneticFieldsButton" destination="mqd-rm-fLz" id="9rd-I4-vyk"/>
+                        <outlet property="rotationButton" destination="A2V-KI-vw6" id="ECU-PY-y55"/>
                         <outlet property="shakeButton" destination="pQN-ej-186" id="XYX-au-EAy"/>
                     </connections>
                 </viewController>

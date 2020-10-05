@@ -32,15 +32,15 @@ class AccelerationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        navigationItem.title = "Motion Test"
+        navigationItem.title = "Acceleration Test"
         setupUI()
-        
     }
     
-    deinit {
-        motionManager
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("Stop AccelerometerUpdates...")
+        motionManager.stopAccelerometerUpdates()
     }
-
     
     // MARK: Helpers
     private func setupUI() {
@@ -66,7 +66,7 @@ class AccelerationVC: UIViewController {
                 if let trackMotion = motion {
                     let userAcceleration = trackMotion.acceleration
                     let displayText = "x: \(userAcceleration.x) \ny: \(userAcceleration.y) \nz: \(userAcceleration.z)"
-                    print("x: \(userAcceleration.x)")
+                    print(displayText)
                     DispatchQueue.main.async {
                         self.label.text = displayText
                     }

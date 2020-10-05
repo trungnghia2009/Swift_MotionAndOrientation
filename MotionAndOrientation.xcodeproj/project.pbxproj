@@ -15,7 +15,12 @@
 		BAA459D2252AD267005915BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAA459D0252AD267005915BE /* LaunchScreen.storyboard */; };
 		BAA459E4252AE1D4005915BE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA459E3252AE1D4005915BE /* Extensions.swift */; };
 		BAA459EC252AEB83005915BE /* ShakeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA459EB252AEB83005915BE /* ShakeVC.swift */; };
-		BAA459EF252AF497005915BE /* CoreMotionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA459EE252AF497005915BE /* CoreMotionVC.swift */; };
+		BAA459EF252AF497005915BE /* AccelerationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA459EE252AF497005915BE /* AccelerationVC.swift */; };
+		BAA459F3252B0CC6005915BE /* RotationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA459F2252B0CC6005915BE /* RotationVC.swift */; };
+		BAA459F8252B11F7005915BE /* MagneticFieldsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA459F7252B11F7005915BE /* MagneticFieldsVC.swift */; };
+		BAA459FC252B12F0005915BE /* DeviceMotionDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA459FB252B12F0005915BE /* DeviceMotionDataVC.swift */; };
+		BAA45A00252B1CEA005915BE /* AudioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA459FF252B1CEA005915BE /* AudioVC.swift */; };
+		BAA45A05252B1E97005915BE /* Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BAA45A04252B1E97005915BE /* Sound.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +34,12 @@
 		BAA459D3252AD267005915BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAA459E3252AE1D4005915BE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BAA459EB252AEB83005915BE /* ShakeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeVC.swift; sourceTree = "<group>"; };
-		BAA459EE252AF497005915BE /* CoreMotionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMotionVC.swift; sourceTree = "<group>"; };
+		BAA459EE252AF497005915BE /* AccelerationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerationVC.swift; sourceTree = "<group>"; };
+		BAA459F2252B0CC6005915BE /* RotationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationVC.swift; sourceTree = "<group>"; };
+		BAA459F7252B11F7005915BE /* MagneticFieldsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagneticFieldsVC.swift; sourceTree = "<group>"; };
+		BAA459FB252B12F0005915BE /* DeviceMotionDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceMotionDataVC.swift; sourceTree = "<group>"; };
+		BAA459FF252B1CEA005915BE /* AudioVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioVC.swift; sourceTree = "<group>"; };
+		BAA45A04252B1E97005915BE /* Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sound.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +72,7 @@
 		BAA459C4252AD264005915BE /* MotionAndOrientation */ = {
 			isa = PBXGroup;
 			children = (
+				BAA45A03252B1E80005915BE /* Resources */,
 				BAA459E6252AE8BC005915BE /* Controllers */,
 				BAA459E8252AE8D0005915BE /* Utils */,
 				BAA459DD252ADF34005915BE /* Commons */,
@@ -87,7 +98,11 @@
 			children = (
 				BAA459C9252AD264005915BE /* MainView.swift */,
 				BAA459EB252AEB83005915BE /* ShakeVC.swift */,
-				BAA459EE252AF497005915BE /* CoreMotionVC.swift */,
+				BAA459EE252AF497005915BE /* AccelerationVC.swift */,
+				BAA459F2252B0CC6005915BE /* RotationVC.swift */,
+				BAA459F7252B11F7005915BE /* MagneticFieldsVC.swift */,
+				BAA459FB252B12F0005915BE /* DeviceMotionDataVC.swift */,
+				BAA459FF252B1CEA005915BE /* AudioVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -98,6 +113,14 @@
 				BAA459E3252AE1D4005915BE /* Extensions.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		BAA45A03252B1E80005915BE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BAA45A04252B1E97005915BE /* Sound.mp3 */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +180,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAA45A05252B1E97005915BE /* Sound.mp3 in Resources */,
 				BAA459D2252AD267005915BE /* LaunchScreen.storyboard in Resources */,
 				BAA459CF252AD267005915BE /* Assets.xcassets in Resources */,
 				BAA459CD252AD264005915BE /* Main.storyboard in Resources */,
@@ -172,10 +196,14 @@
 			files = (
 				BAA459EC252AEB83005915BE /* ShakeVC.swift in Sources */,
 				BAA459CA252AD264005915BE /* MainView.swift in Sources */,
+				BAA459FC252B12F0005915BE /* DeviceMotionDataVC.swift in Sources */,
 				BAA459C6252AD264005915BE /* AppDelegate.swift in Sources */,
-				BAA459EF252AF497005915BE /* CoreMotionVC.swift in Sources */,
+				BAA459EF252AF497005915BE /* AccelerationVC.swift in Sources */,
 				BAA459C8252AD264005915BE /* SceneDelegate.swift in Sources */,
 				BAA459E4252AE1D4005915BE /* Extensions.swift in Sources */,
+				BAA45A00252B1CEA005915BE /* AudioVC.swift in Sources */,
+				BAA459F8252B11F7005915BE /* MagneticFieldsVC.swift in Sources */,
+				BAA459F3252B0CC6005915BE /* RotationVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

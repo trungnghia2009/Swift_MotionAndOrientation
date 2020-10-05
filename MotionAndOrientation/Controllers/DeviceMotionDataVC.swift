@@ -1,5 +1,5 @@
 //
-//  CoreMotionVC.swift
+//  DeviceMotionDataVC.swift
 //  MotionAndOrientation
 //
 //  Created by NghiaTran on 10/5/20.
@@ -8,7 +8,7 @@
 import UIKit
 import CoreMotion
 
-class AccelerationVC: UIViewController {
+class DeviceMotionDataVC: UIViewController {
 
     // MARK: Properties
     private let motionManager = CMMotionManager()
@@ -32,15 +32,15 @@ class AccelerationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        navigationItem.title = "Motion Test"
+        navigationItem.title = "Device Motion Test"
         setupUI()
-        
     }
     
-    deinit {
-        motionManager
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("Stop DeviceMotionUpdates...")
+        motionManager.stopDeviceMotionUpdates()
     }
-
     
     // MARK: Helpers
     private func setupUI() {
@@ -49,7 +49,7 @@ class AccelerationVC: UIViewController {
         view.addSubview(imageView)
         imageView.centerX(inView: view)
         imageView.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 20)
-        imageView.image = UIImage(named: "Acceleration")
+        imageView.image = UIImage(named: "DeviceMotionData")
         
         // label layouts
         view.addSubview(label)
@@ -60,13 +60,13 @@ class AccelerationVC: UIViewController {
     }
     
     private func updateLabel(_ label: UILabel) {
-        if motionManager.isAccelerometerAvailable {
-            motionManager.accelerometerUpdateInterval = 0.5
-            motionManager.startAccelerometerUpdates(to: OperationQueue.main) { (motion, error) -> Void in
+        if motionManager.isDeviceMotionAvailable {
+            motionManager.deviceMotionUpdateInterval = 0.5
+            motionManager.startDeviceMotionUpdates(to: OperationQueue.main) { (motion, error) -> Void in
                 if let trackMotion = motion {
-                    let userAcceleration = trackMotion.acceleration
-                    let displayText = "x: \(userAcceleration.x) \ny: \(userAcceleration.y) \nz: \(userAcceleration.z)"
-                    print("x: \(userAcceleration.x)")
+                    let userField = trackMotion.attitude
+                    let displayText = "Roll: \(userField.roll) \nPitch: \(userField.pitch) \nYaw: \(userField.yaw)"
+                    print(displayText)
                     DispatchQueue.main.async {
                         self.label.text = displayText
                     }

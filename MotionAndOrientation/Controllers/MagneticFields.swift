@@ -1,5 +1,5 @@
 //
-//  CoreMotionVC.swift
+//  MagneticFields.swift
 //  MotionAndOrientation
 //
 //  Created by NghiaTran on 10/5/20.
@@ -8,7 +8,7 @@
 import UIKit
 import CoreMotion
 
-class AccelerationVC: UIViewController {
+class MagneticFieldsVC: UIViewController {
 
     // MARK: Properties
     private let motionManager = CMMotionManager()
@@ -32,15 +32,9 @@ class AccelerationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        navigationItem.title = "Motion Test"
+        navigationItem.title = "Magnetic Fields Test"
         setupUI()
-        
     }
-    
-    deinit {
-        motionManager
-    }
-
     
     // MARK: Helpers
     private func setupUI() {
@@ -49,7 +43,7 @@ class AccelerationVC: UIViewController {
         view.addSubview(imageView)
         imageView.centerX(inView: view)
         imageView.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 20)
-        imageView.image = UIImage(named: "Acceleration")
+        imageView.image = UIImage(named: "MagneticFields")
         
         // label layouts
         view.addSubview(label)
@@ -60,13 +54,13 @@ class AccelerationVC: UIViewController {
     }
     
     private func updateLabel(_ label: UILabel) {
-        if motionManager.isAccelerometerAvailable {
-            motionManager.accelerometerUpdateInterval = 0.5
-            motionManager.startAccelerometerUpdates(to: OperationQueue.main) { (motion, error) -> Void in
+        if motionManager.isGyroAvailable {
+            motionManager.gyroUpdateInterval = 2.5
+            motionManager.startGyroUpdates(to: OperationQueue.main) { (motion, error) -> Void in
                 if let trackMotion = motion {
-                    let userAcceleration = trackMotion.acceleration
-                    let displayText = "x: \(userAcceleration.x) \ny: \(userAcceleration.y) \nz: \(userAcceleration.z)"
-                    print("x: \(userAcceleration.x)")
+                    let userRotation = trackMotion.rotationRate
+                    let displayText = "x: \(userRotation.x) \ny: \(userRotation.y) \nz: \(userRotation.z)"
+                    //print("x: \(userRotation.x)")
                     DispatchQueue.main.async {
                         self.label.text = displayText
                     }
@@ -74,5 +68,7 @@ class AccelerationVC: UIViewController {
             }
         }
     }
+    
+    
 
 }
